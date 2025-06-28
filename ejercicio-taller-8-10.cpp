@@ -91,16 +91,20 @@ void modificarEstudiante() {
 // -----------------------------
 // 👇 TU TAREA: Completa esta función (DELETE)
 void eliminarEstudiante() {
+    // Se abre el archivo
     ofstream archivo("estudiantes.txt");
     Estudiante e;
     string buscado;
     bool eliminado = false;
 
+    // Se le pide al usuario que digite el carnet del estudiante que desea eliminar
     cout << "Ingrese el carnet del estudiante a eliminar: ";
     cin >> buscado;
     
 
+    // Condicion para comprobar que el archivo este abierto
     if (archivo.is_open()) {
+        // Comprueba si el carnet digitado es igual al carnet del estudiante
         if (e.carnet == buscado) {
             Estudiante eliminar;
 
@@ -108,8 +112,6 @@ void eliminarEstudiante() {
             cin >> eliminar.carnet;
 
             eliminado = true;
-        } else {
-            
         }
 
         archivo.close();
